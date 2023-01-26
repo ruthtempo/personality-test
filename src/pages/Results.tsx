@@ -1,25 +1,16 @@
 import { Box, Button } from "@chakra-ui/react";
-import { Radar } from "react-chartjs-2";
+import { PolarArea } from "react-chartjs-2";
 import { useNavigate } from "react-router-dom";
 import { Answer } from "../DATA";
 import {
   Chart as ChartJS,
   RadialLinearScale,
-  PointElement,
-  LineElement,
-  Filler,
+  ArcElement,
   Tooltip,
   Legend,
 } from "chart.js";
 
-ChartJS.register(
-  RadialLinearScale,
-  PointElement,
-  LineElement,
-  Filler,
-  Tooltip,
-  Legend
-);
+ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
 export const Results = (p: {
   answers: Answer["value"][];
@@ -33,7 +24,9 @@ export const Results = (p: {
     return obj;
   }, qualities);
 
-  console.log(answersSum);
+  const points = Object.values(answersSum);
+
+  console.log();
 
   const data = {
     labels: [
@@ -49,23 +42,34 @@ export const Results = (p: {
     datasets: [
       {
         label: "My personality results",
-        data: [answersSum],
-        backgroundColor: "rgba(255, 99, 132, 0.2)",
-        borderColor: "rgba(255, 99, 132, 1)",
+        data: points,
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.5)",
+          "rgba(54, 162, 235, 0.5)",
+          "rgba(255, 239, 83, 0.8)",
+          "rgba(75, 192, 192, 0.5)",
+          "rgba(153, 102, 255, 0.5)",
+          "rgba(255, 186, 55, 0.8)",
+          "rgba(130, 188, 108, 0.8)",
+          "rgba(245, 40, 145, 0.8)",
+        ],
+        borderColor: "rgba(0, 128, 128,1)",
         borderWidth: 1,
       },
     ],
   };
   return (
-    <Box display="flex" alignItems="center" flexDirection="column">
-      <Radar data={data} />
+    <Box display="flex" alignItems="center" flexDirection="column" w={"100%"}>
+      <PolarArea data={data} />
       <Button
         onClick={() => {
           p.resetTest();
           navigate("/");
         }}
+        colorScheme="teal"
+        my={4}
       >
-        Test erneut machen
+        Test wiederholen
       </Button>
     </Box>
   );
