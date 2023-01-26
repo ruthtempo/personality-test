@@ -7,14 +7,14 @@ export interface TestQuestion {
   };
 }
 
-type Answer = {
+export type Answer = {
   text: string;
   value: "E" | "S" | "F" | "B" | "I" | "In" | "D" | "W";
 };
 
 export const personalityTest: TestQuestion[] = [
   {
-    id: 1,
+    id: 0,
     question: "Es liegt mir eher,",
     answers: {
       a: { text: "wenn man mir etwas durch die Blume sagt.", value: "F" },
@@ -22,7 +22,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 2,
+    id: 1,
     question: "",
     answers: {
       a: {
@@ -33,7 +33,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 3,
+    id: 2,
     question: "Langfristige Pläne geben mir das Gefühl,",
     answers: {
       a: {
@@ -44,7 +44,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 4,
+    id: 3,
     question: "Arbeiten, die Geduld und Sorgfalt erfordern,",
     answers: {
       a: {
@@ -55,7 +55,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 5,
+    id: 4,
     question: " Ich neige eher dazu,",
     answers: {
       a: {
@@ -66,7 +66,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 6,
+    id: 5,
     question: "Für mich gilt eher:",
     answers: {
       a: {
@@ -77,7 +77,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 7,
+    id: 6,
     question:
       "Wenn ich eine Entscheidung zu treffen habe, höre ich im Zweifelsfall auf ",
     answers: {
@@ -89,7 +89,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 8,
+    id: 7,
     question: "Wenn ich bastle oder handwerke,",
     answers: {
       a: {
@@ -100,7 +100,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 9,
+    id: 8,
     question:
       "Wenn ich mich entscheiden müsste, würde ich mich eher bezeichnen als",
     answers: {
@@ -112,7 +112,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 10,
+    id: 9,
     question: "",
     answers: {
       a: {
@@ -123,7 +123,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 11,
+    id: 10,
     question: "Meiner Meinung nach ist die größere Tugend",
     answers: {
       a: {
@@ -134,7 +134,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 12,
+    id: 11,
     question: "Meine Stärke liegt eher darin,",
     answers: {
       a: {
@@ -145,7 +145,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 13,
+    id: 12,
     question: "Wenn ich in Gesellschaft bin,",
     answers: {
       a: {
@@ -156,7 +156,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 14,
+    id: 13,
     question: "Wenn ich Probleme habe,",
     answers: {
       a: {
@@ -167,7 +167,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 15,
+    id: 14,
     question: "",
     answers: {
       a: {
@@ -181,7 +181,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 16,
+    id: 15,
     question: "Wenn ich Gäste erwarte,",
     answers: {
       a: {
@@ -195,7 +195,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 17,
+    id: 16,
     question: "",
     answers: {
       a: {
@@ -209,7 +209,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 18,
+    id: 17,
     question: "",
     answers: {
       a: {
@@ -223,7 +223,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 19,
+    id: 18,
     question: " Ich tanke meine Batterien am besten auf,",
     answers: {
       a: {
@@ -237,7 +237,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 20,
+    id: 19,
     question: "Es macht mir mehr Spaß,",
     answers: {
       a: {
@@ -251,7 +251,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 21,
+    id: 20,
     question: "Es nervt mich eher,",
     answers: {
       a: {
@@ -265,7 +265,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 22,
+    id: 21,
     question: "",
     answers: {
       a: {
@@ -279,7 +279,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 23,
+    id: 22,
     question: "",
     answers: {
       a: {
@@ -293,7 +293,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 24,
+    id: 23,
     question: "",
     answers: {
       a: {
@@ -307,7 +307,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 25,
+    id: 24,
     question: "Ich entscheide und beurteile",
     answers: {
       a: {
@@ -321,7 +321,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 26,
+    id: 25,
     question: "Wenn ich über längere Zeit mit anderen Menschen zusammen bin,",
     answers: {
       a: {
@@ -335,7 +335,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 27,
+    id: 26,
     question: "Ich bevorzuge eher eine Arbeit,",
     answers: {
       a: {
@@ -349,7 +349,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 28,
+    id: 27,
     question: "Ich verlasse mich lieber",
     answers: {
       a: {
@@ -363,7 +363,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 29,
+    id: 28,
     question: "Wenn ich mit einer Gruppe von Freunden verreise,",
     answers: {
       a: {
@@ -377,7 +377,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 30,
+    id: 29,
     question: "",
     answers: {
       a: {
@@ -391,7 +391,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 31,
+    id: 30,
     question: "Ich mag es,",
     answers: {
       a: {
@@ -405,7 +405,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 32,
+    id: 31,
     question: "Ich arbeite lieber in einem Bereich,",
     answers: {
       a: {
@@ -419,7 +419,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 33,
+    id: 32,
     question: "",
     answers: {
       a: {
@@ -433,7 +433,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 34,
+    id: 33,
     question: "",
     answers: {
       a: {
@@ -447,7 +447,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 35,
+    id: 34,
     question: "Wenn ich auf einer Party bin,",
     answers: {
       a: {
@@ -461,7 +461,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 36,
+    id: 35,
     question: "Wenn ich vor einer schwierigen Aufgabe stehe,",
     answers: {
       a: {
@@ -475,7 +475,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 37,
+    id: 36,
     question: "",
     answers: {
       a: {
@@ -489,7 +489,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 38,
+    id: 37,
     question: "Ich arbeite am effektivsten",
     answers: {
       a: {
@@ -503,7 +503,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 39,
+    id: 38,
     question: "Es bereitet mir mehr Spaß,",
     answers: {
       a: {
@@ -517,7 +517,7 @@ export const personalityTest: TestQuestion[] = [
     },
   },
   {
-    id: 40,
+    id: 39,
     question: "",
     answers: {
       a: {
