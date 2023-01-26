@@ -7,14 +7,16 @@ import {
   Divider,
   Heading,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
-export const HomePage = (p: {
-  setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
-}) => {
+export const HomePage = () => {
+  const navigate = useNavigate();
   return (
-    <Card mt={3}>
+    <Card>
       <CardHeader>
-        <Heading size="lg">Fragen zur Persönlichkeit</Heading>
+        <Heading size="lg" color={"tomato"}>
+          Fragen zur Persönlichkeit
+        </Heading>
       </CardHeader>
       <CardBody>
         Zu jeder Frage gibt es zwei Antwortmöglichkeiten. Entscheide Dich bitte
@@ -26,9 +28,9 @@ export const HomePage = (p: {
       <Divider />
       <CardFooter>
         <Button
-          colorScheme="teal"
+          colorScheme={"teal"}
           variant="solid"
-          onClick={() => p.setCurrentPage("form")}
+          onClick={() => navigate("/form")}
         >
           Los Geht's!
         </Button>
