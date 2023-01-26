@@ -15,9 +15,8 @@ export const Form = (p: {
   return p.answers.length < personalityTest.length ? (
     <Box display="flex" flexDirection={"column"}>
       <Text>
-        Question {p.answers.length + 1} of {personalityTest.length}
+        Frage {p.answers.length + 1} von {personalityTest.length}
       </Text>
-
       <Progress value={progress} my={4} colorScheme="teal" />
       <Text fontSize="4xl" textAlign="center">
         {personalityTest[p.answers.length].question}
