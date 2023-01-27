@@ -38,7 +38,7 @@ export const HomePage = (p: {
   };
 
   return (
-    <Card data-test="start-card">
+    <Card data-test="start-card" shadow="lg">
       <CardHeader>
         <Heading size="lg" color={"tomato"}>
           Fragen zur Persönlichkeit
