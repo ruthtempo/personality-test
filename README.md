@@ -14,10 +14,19 @@
 2.  User responses summary is displayed in a graphic
 3.  User can reset his results and retake the test.
 
+## Tests Location
+
+`./cypress/e2e`
+
 ## Running Tests
 
-- Open terminal 1: `npx cypress open`
-- Open terminal 2 : `npm npm start`
+- Open terminal 1 and run `npx cypress open`
+- Open terminal 2 and run: `npm npm start`
+
+In Cypress:
+
+1. select **E2E Testing**
+2. Select **Chrome** browser
 
 ## Built With
 
