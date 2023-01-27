@@ -1,4 +1,5 @@
 import { Box, Button, Progress, Stack, Text } from "@chakra-ui/react";
+import React from "react";
 import { Answer, personalityTest } from "../DATA";
 import { Results } from "./Results";
 
@@ -23,6 +24,7 @@ export const Form = (p: {
       </Text>
       <Stack spacing={4} justifyContent="space-around" my={8}>
         <Button
+          data-test="option-0"
           onClick={() => p.answerQuestion(optionA.value)}
           variant="solid"
           colorScheme="teal"
@@ -30,6 +32,7 @@ export const Form = (p: {
           {optionA.text}
         </Button>
         <Button
+          data-test="option-1"
           onClick={() => p.answerQuestion(optionB.value)}
           variant="solid"
           colorScheme="teal"

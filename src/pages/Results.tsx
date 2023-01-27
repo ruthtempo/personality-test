@@ -9,6 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import React from "react";
 
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
@@ -58,8 +59,9 @@ export const Results = (p: {
   };
   return (
     <Box display="flex" alignItems="center" flexDirection="column" w={"100%"}>
-      <PolarArea data={data} />
+      <PolarArea data={data} data-test="results-chart" />
       <Button
+        data-test="reset-button"
         onClick={() => {
           p.resetTest();
           navigate("/");
