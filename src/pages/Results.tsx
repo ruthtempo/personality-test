@@ -60,7 +60,9 @@ export const Results = (p: {
   };
   return (
     <Box display="flex" alignItems="center" flexDirection="column" w={"100%"}>
-      <Text>{p.userName}, Here your Personality tests Results</Text>
+      <Text fontSize="lg">
+        {p.userName.toUpperCase()}, deine Personlichkeismerkmale
+      </Text>
       <PolarArea data={data} data-test="results-chart" />
       <Button
         data-test="reset-button"
