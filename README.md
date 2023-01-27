@@ -16,7 +16,8 @@
 
 ## Running Tests
 
-4.  run tests `npm run test
+- Open terminal 1: `npx cypress open`
+- Open terminal 2 : `npm npm start`
 
 ## Built With
 
