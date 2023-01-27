@@ -13,12 +13,16 @@ import {
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const HomePage = (p: { setUserName: (name: string) => void }) => {
+export const HomePage = (p: {
+  setUserName: (name: string) => void;
+  resetTest: () => void;
+}) => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [isError, setIsError] = useState(false);
 
   const handleStart = (name: string) => {
+    p.resetTest();
     if (name.trim() === "") {
       setIsError(true);
     } else {
@@ -50,12 +54,17 @@ export const HomePage = (p: { setUserName: (name: string) => void }) => {
       <CardFooter>
         <FormControl isRequired isInvalid={isError}>
           <Input
+            data-test="name-input"
             placeholder="Dein Name"
             w="50%"
             value={name}
             onChange={handleInputChange}
           />
-          {isError && <FormErrorMessage>Pflichtfeld</FormErrorMessage>}
+          {isError && (
+            <FormErrorMessage data-test="error-no-name">
+              Pflichtfeld
+            </FormErrorMessage>
+          )}
         </FormControl>
         <Button
           data-test="start-test-button"
