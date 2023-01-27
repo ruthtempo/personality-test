@@ -10,7 +10,7 @@
 
 ## Functionalities
 
-1.  Form progress is not lost - saved in localStorage.
+1.  Form progress is not lost on refresh - saved in localStorage.
 2.  User responses summary is displayed in a graphic
 3.  User can reset his results and retake the test.
 
@@ -19,6 +19,8 @@
 `./cypress/e2e`
 
 ## Running Tests
+
+In Terminal:
 
 - Open terminal 1 and run `npx cypress open`
 - Open terminal 2 and run: `npm npm start`
