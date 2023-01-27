@@ -9,6 +9,7 @@ import {
   FormErrorMessage,
   Heading,
   Input,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -52,28 +53,29 @@ export const HomePage = (p: {
       </CardBody>
       <Divider />
       <CardFooter>
-        <FormControl isRequired isInvalid={isError}>
-          <Input
-            data-test="name-input"
-            placeholder="Dein Name"
-            w="50%"
-            value={name}
-            onChange={handleInputChange}
-          />
-          {isError && (
-            <FormErrorMessage data-test="error-no-name">
-              Pflichtfeld
-            </FormErrorMessage>
-          )}
-        </FormControl>
-        <Button
-          data-test="start-test-button"
-          colorScheme={"teal"}
-          variant="solid"
-          onClick={() => handleStart(name)}
-        >
-          Los Geht's!
-        </Button>
+        <SimpleGrid columns={{ md: 2 }} spacing={5}>
+          <FormControl isRequired isInvalid={isError}>
+            <Input
+              data-test="name-input"
+              placeholder="Dein Name"
+              value={name}
+              onChange={handleInputChange}
+            />
+            {isError && (
+              <FormErrorMessage data-test="error-no-name">
+                Pflichtfeld
+              </FormErrorMessage>
+            )}
+          </FormControl>
+          <Button
+            data-test="start-test-button"
+            colorScheme={"teal"}
+            variant="solid"
+            onClick={() => handleStart(name)}
+          >
+            Los Geht's!
+          </Button>
+        </SimpleGrid>
       </CardFooter>
     </Card>
   );
