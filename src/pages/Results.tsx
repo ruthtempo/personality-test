@@ -1,4 +1,4 @@
-import { Box, Button } from "@chakra-ui/react";
+import { Box, Button, Text } from "@chakra-ui/react";
 import { PolarArea } from "react-chartjs-2";
 import { useNavigate } from "react-router-dom";
 import { Answer } from "../DATA";
@@ -16,6 +16,7 @@ ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 export const Results = (p: {
   answers: Answer["value"][];
   resetTest: () => void;
+  userName: string;
 }) => {
   const navigate = useNavigate();
   const qualities = { E: 0, I: 0, In: 0, S: 0, F: 0, D: 0, B: 0, W: 0 };
@@ -59,6 +60,7 @@ export const Results = (p: {
   };
   return (
     <Box display="flex" alignItems="center" flexDirection="column" w={"100%"}>
+      <Text>{p.userName}, Here your Personality tests Results</Text>
       <PolarArea data={data} data-test="results-chart" />
       <Button
         data-test="reset-button"

@@ -5,13 +5,33 @@ import {
   CardFooter,
   CardHeader,
   Divider,
+  FormControl,
+  FormErrorMessage,
   Heading,
+  Input,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const HomePage = () => {
+export const HomePage = (p: { setUserName: (name: string) => void }) => {
   const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [isError, setIsError] = useState(false);
+
+  const handleStart = (name: string) => {
+    if (name.trim() === "") {
+      setIsError(true);
+    } else {
+      setIsError(false);
+      p.setUserName(name);
+      navigate("/form");
+    }
+  };
+
+  const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
+    setName(e.currentTarget.value);
+  };
+
   return (
     <Card data-test="start-card">
       <CardHeader>
@@ -28,11 +48,20 @@ export const HomePage = () => {
       </CardBody>
       <Divider />
       <CardFooter>
+        <FormControl isRequired isInvalid={isError}>
+          <Input
+            placeholder="Dein Name"
+            w="50%"
+            value={name}
+            onChange={handleInputChange}
+          />
+          {isError && <FormErrorMessage>Pflichtfeld</FormErrorMessage>}
+        </FormControl>
         <Button
           data-test="start-test-button"
           colorScheme={"teal"}
           variant="solid"
-          onClick={() => navigate("/form")}
+          onClick={() => handleStart(name)}
         >
           Los Geht's!
         </Button>

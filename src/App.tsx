@@ -16,6 +16,7 @@ const getSavedAnswers = () => {
 
 function App() {
   const [answers, setAnswers] = useState<Answer["value"][]>(getSavedAnswers());
+  const [userName, setUserName] = useState<string>("");
 
   const answerQuestion = (answer: Answer["value"]) => {
     const newAnswers = answers.concat(answer);
@@ -32,7 +33,7 @@ function App() {
     <ChakraProvider>
       <Container h="100vh" centerContent justifyContent="center">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage setUserName={setUserName} />} />
           <Route
             path="/form"
             element={
@@ -40,6 +41,7 @@ function App() {
                 answerQuestion={answerQuestion}
                 answers={answers}
                 resetTest={resetTest}
+                userName={userName}
               />
             }
           />

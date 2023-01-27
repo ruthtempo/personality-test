@@ -7,6 +7,7 @@ export const Form = (p: {
   answerQuestion: (answer: Answer["value"]) => void;
   answers: Answer["value"][];
   resetTest: () => void;
+  userName: string;
 }) => {
   const progress = (p.answers.length / personalityTest.length) * 100;
 
@@ -42,6 +43,10 @@ export const Form = (p: {
       </Stack>
     </Box>
   ) : (
-    <Results answers={p.answers} resetTest={p.resetTest} />
+    <Results
+      answers={p.answers}
+      resetTest={p.resetTest}
+      userName={p.userName}
+    />
   );
 };
