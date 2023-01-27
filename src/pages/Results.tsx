@@ -1,15 +1,15 @@
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Badge, Box, Button, SimpleGrid, Text } from "@chakra-ui/react";
+import {
+  ArcElement,
+  Chart as ChartJS,
+  Legend,
+  RadialLinearScale,
+  Tooltip,
+} from "chart.js";
+import React from "react";
 import { PolarArea } from "react-chartjs-2";
 import { useNavigate } from "react-router-dom";
 import { Answer } from "../DATA";
-import {
-  Chart as ChartJS,
-  RadialLinearScale,
-  ArcElement,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import React from "react";
 
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
@@ -32,9 +32,9 @@ export const Results = (p: {
     labels: [
       "Extraversion",
       "Intraversion",
-      "Intuitive Wahnehmung",
-      "Sinliche Wahrnehmung",
-      "fuhlentscheidung",
+      "intuitive Wahrnehmung",
+      "sinliche Wahrnehmung",
+      "Fuhlentscheidung",
       "Denkentcheidung",
       "beurteilende Einstellung",
       "wahnehmende Einstellung",
@@ -60,10 +60,27 @@ export const Results = (p: {
   };
   return (
     <Box display="flex" alignItems="center" flexDirection="column" w={"100%"}>
-      <Text fontSize="lg">
+      <Text fontSize="lg" align="center" mb={4}>
         {p.userName.toUpperCase()}, deine Personlichkeismerkmale
       </Text>
-      <PolarArea data={data} data-test="results-chart" />
+      <SimpleGrid columns={2} spacing={2} mb={4}>
+        {data.labels.map((label, i) => (
+          <Badge
+            key={label}
+            backgroundColor={data.datasets[0].backgroundColor[i]}
+            textTransform="none"
+            isTruncated
+          >
+            {label}
+          </Badge>
+        ))}
+      </SimpleGrid>
+
+      <PolarArea
+        data={data}
+        data-test="results-chart"
+        options={{ plugins: { legend: { display: false } } }}
+      />
       <Button
         data-test="reset-button"
         onClick={() => {
