@@ -33,7 +33,12 @@ function App() {
     <ChakraProvider>
       <Container h="100vh" centerContent justifyContent="center">
         <Routes>
-          <Route path="/" element={<HomePage setUserName={setUserName} />} />
+          <Route
+            path="/"
+            element={
+              <HomePage setUserName={setUserName} resetTest={resetTest} />
+            }
+          />
           <Route
             path="/form"
             element={
