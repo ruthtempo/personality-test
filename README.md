@@ -20,8 +20,7 @@
 
 ## Built With
 
-- React
-- Typescript
+- React (CRA) with Typescript
 - react-router-dom
 - Chakra UI
 - ChartJS / react-chartjs-2
