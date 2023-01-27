@@ -10,15 +10,15 @@ describe("Form", () => {
     cy.getByData("option-1").should("exist");
   });
 
-  it.only("when an answer is clicked, it gets saved in localStorage", () => {
+  it("when an answer is clicked, it gets saved in localStorage", () => {
     for (let i = 1; i <= 40; i++) {
       cy.getByData("option-0")
         .click()
         .then(() => {
-          const localStorage: string[] = JSON.parse(
-            window.localStorage.getItem("MyAnswers") ?? "[]"
+          const localStorage = JSON.parse(
+            window.localStorage.getItem("MyAnswers") ?? "{}"
           );
-          expect(localStorage.length).eq(i);
+          expect(localStorage.answers.length).eq(i);
         });
     }
 
