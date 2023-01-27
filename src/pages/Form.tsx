@@ -20,7 +20,7 @@ export const Form = (p: {
         Frage {p.answers.length + 1} von {personalityTest.length}
       </Text>
       <Progress value={progress} my={4} colorScheme="teal" />
-      <Text fontSize="4xl" textAlign="center">
+      <Text fontSize="3xl" textAlign="center">
         {personalityTest[p.answers.length].question}
       </Text>
       <Stack spacing={4} justifyContent="space-around" my={8}>
@@ -29,6 +29,9 @@ export const Form = (p: {
           onClick={() => p.answerQuestion(optionA.value)}
           variant="solid"
           colorScheme="teal"
+          whiteSpace="normal"
+          h="auto"
+          p={3}
         >
           {optionA.text}
         </Button>
@@ -37,6 +40,9 @@ export const Form = (p: {
           onClick={() => p.answerQuestion(optionB.value)}
           variant="solid"
           colorScheme="teal"
+          whiteSpace="normal"
+          h="auto"
+          p={3}
         >
           {optionB.text}
         </Button>
