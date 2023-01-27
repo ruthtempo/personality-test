@@ -26,8 +26,6 @@ export const Results = (p: {
 
   const points = Object.values(answersSum);
 
-  console.log();
-
   const data = {
     labels: [
       "Extraversion",
@@ -41,7 +39,7 @@ export const Results = (p: {
     ],
     datasets: [
       {
-        label: "My personality results",
+        label: "My Personality Results",
         data: points,
         backgroundColor: [
           "rgba(255, 99, 132, 0.5)",
