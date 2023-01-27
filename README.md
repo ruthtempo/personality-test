@@ -1,17 +1,31 @@
 # Personality Test
 
-- Answer a form and get the results of your personality.
 - Personality Test from book "So bin ich eben" by Stefanie Stahl
 
 ## Getting Started
 
-1.  fork the project
+1.  Fork the project
 2.  Install dependencies `npm install`
 3.  run the app `npm start`
 
-## Runnin the tests
+## Functionalities
 
-4.  run tests
+1.  Form progress is not lost - saved in localStorage.
+2.  User responses summary is displayed in a graphic
+3.  User can reset his results and retake the test.
+
+## Running Tests
+
+4.  run tests `npm run test
+
+## Built With
+
+- React
+- Typescript
+- react-router-dom
+- Chakra UI
+- ChartJS / react-chartjs-2
+- Cypress
 
 ## Author
 
