@@ -13,22 +13,22 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../contexts/UserContext";
 
-export const HomePage = (p: {
-  setUserName: (name: string) => void;
-  resetTest: () => void;
-}) => {
+export const HomePage = () => {
+  const { setUserName, resetTest } = useUserContext();
+
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [isError, setIsError] = useState(false);
 
   const handleStart = (name: string) => {
-    p.resetTest();
+    resetTest();
     if (name.trim() === "") {
       setIsError(true);
     } else {
       setIsError(false);
-      p.setUserName(name);
+      setUserName(name);
       navigate("/form");
     }
   };
